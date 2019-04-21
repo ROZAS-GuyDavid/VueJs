@@ -22,7 +22,25 @@
     </nav>
 
     <div class="container" id="app">
-        {{ message }}
+        
+        <!-- <a :href="link" :title="message">{{ message }}</a> -->
+        <input type="checkbox" v-model="cls" :true-value="'alert-success'" :false-value="'alert-danger'">
+
+        <div class="alert" role="alert" :class="cls">
+          <button @click="close" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <p>{{message}}</p>
+          
+        </div>
+
+        <!-- <div class="alert alert-danger" role="alert" v-else>
+          Echec ça n'a pas marcher
+        </div>
+        <ul class="list-group">
+          <li v-for="person in persons" class="list-group-item">{{person}}</li>
+        </ul> -->
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
