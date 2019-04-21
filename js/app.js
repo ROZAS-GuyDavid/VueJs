@@ -1,14 +1,16 @@
 let vm = new Vue({
     el: '#app',
     data: {
-        message : 'hello world',
-        link: 'http:///grafikart.fr',
-        cls: 'alert-success',
-        persons: ['Jonathan','Marion','Marine','Jean','Patrick']
+        seconds : 0
     },
-    methods: {
-        close: function(){
-            this.success = false
-        }
+    
+    mounted: function () {
+        this.$interval = setInterval(() =>{
+            console.log('Time')
+            this.seconds++
+        }, 1000)
+    },
+    destroyed: function () {
+        clearInterval(this.$interval)
     }
 })
