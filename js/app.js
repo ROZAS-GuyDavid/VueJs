@@ -1,16 +1,13 @@
 let vm = new Vue({
     el: '#app',
     data: {
-        seconds : 0
+        success : false,
+        message: ''
     },
-    
-    mounted: function () {
-        this.$interval = setInterval(() =>{
-            console.log('Time')
-            this.seconds++
-        }, 1000)
-    },
-    destroyed: function () {
-        clearInterval(this.$interval)
+    methods: {
+        cls: function (){
+            console.log('cls called')
+           return this.success === true ? "alert-success" : "alert-danger"
+        }
     }
 })

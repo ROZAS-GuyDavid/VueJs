@@ -23,7 +23,12 @@
 
     <div class="container" id="app">
         
-        {{seconds}}
+        <input type="checkbox" v-model="success">
+        <input type="text" v-model="message">
+        {{message}}
+        <div class="alert" role="alert" :class="cls">
+          <p>Salut les gens</p>
+        </div>
 
     </div>
 
